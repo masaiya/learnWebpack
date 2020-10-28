@@ -33,6 +33,8 @@ module.exports = {
     // 启动gzip压缩
     compress:true,
     // 端口号
-    port: 3000
+    port: 3000,
+    // 自动打开浏览器
+    open: true
   }
 }

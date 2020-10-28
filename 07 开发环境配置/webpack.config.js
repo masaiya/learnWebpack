@@ -1,14 +1,17 @@
 /*
    开发环境配置：能够让代码运行
+   运行项目指令：
+   webpack  会将打包结果输出出去
+   npx webpack-dev-server 只会在内存中输出
  */
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { resolve } = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
-    filename: 'build.js',
+    filename: 'js/build.js',
     path: resolve(__dirname, 'build')
   },
   module: {
@@ -34,7 +37,8 @@ module.exports = {
         options: {
           limit: 8 * 1024,
           name: '[hash:10].[ext]',
-          esModule: false
+          esModule: false,
+          outputPath: 'imgs'
         }
       },
       {
@@ -45,7 +49,8 @@ module.exports = {
         exclude: /\.(html|js|css|less|jpg|png|gif)$/,
         loader: 'file-loader',
         options: {
-          name: '[hash:10].[ext]'
+          name: '[hash:10].[ext]',
+          outputPath: 'media'
         }
       }
     ]

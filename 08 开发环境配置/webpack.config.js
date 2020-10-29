@@ -1,10 +1,3 @@
-/*
-   开发环境配置：能够让代码运行
-   运行项目指令：
-   webpack  会将打包结果输出出去
-   npx webpack-dev-server 只会在内存中输出
- */
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { resolve } = require("path");
 
@@ -32,13 +25,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png|gif)$/,
+        test: /\.(png|gif|jpg)$/,
         loader: 'url-loader',
         options: {
           limit: 8 * 1024,
           name: '[hash:10].[ext]',
-          esModule: false,
-          outputPath: 'imgs'
+          outputPath: 'img'
         }
       },
       {
@@ -46,7 +38,7 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        exclude: /\.(html|js|css|less|jpg|png|gif)$/,
+        exclude: /\.(js|html|css|less|png|gif|jpg)$/,
         loader: 'file-loader',
         options: {
           name: '[hash:10].[ext]',
@@ -61,15 +53,23 @@ module.exports = {
     })
   ],
   mode: 'development',
-
+  
+  // devServer:开发服务器，自动化工具(自动编译，自动打开浏览器，自动刷新浏览器)
+  // 只会在内存中编译打包，不会有任何输出
+  // 开启指令： npx webpack-dev-server
   devServer: {
     contentBase: resolve(__dirname, 'build'),
     // 采用gzip压缩
     compress: true,
-    // 采用3000端口
+    // 端口号
     port: 3000,
-    // 自动打开
+    // 是否自动开启
     open: true
   }
 }
+
+
+
+
+
 

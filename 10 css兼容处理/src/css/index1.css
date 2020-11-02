@@ -1,0 +1,7 @@
+#box1 {
+  background-color: skyblue;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  backface-visibility: hidden;
+}

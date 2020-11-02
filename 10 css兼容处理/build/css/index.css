@@ -1,0 +1,13 @@
+#box1 {
+  background-color: skyblue;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+#box2 {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+}

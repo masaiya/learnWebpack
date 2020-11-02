@@ -1,0 +1,6 @@
+#box {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  backface-visibility: hidden;
+}
